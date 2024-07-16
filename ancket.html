@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '../static/style.css' %}">
+    <meta name="viewport" content="width=device-width">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+<div class="dateblock3">
+    <div class="dateblock2">
+        <div class="day" id="currentDay"></div>
+        <div class="dateblock">
+            <div class="dateblock2">
+                <div class="text2" id="currentMonth"></div>
+                <div class="text2" id="currentYear"></div>
+            </div>
+            <div class="text2" id="currentDayOfWeek"></div>
+        </div>
+    </div>
+</div>
+<script>
+  var yearElement = document.getElementById('currentYear');
+  var monthElement = document.getElementById('currentMonth');
+  var dayElement = document.getElementById('currentDay');
+  var dayOfWeekElement = document.getElementById('currentDayOfWeek');
+
+  setInterval(function () {
+    var currentDate = new Date();
+
+    var year = currentDate.getFullYear();
+    var month = currentDate.toLocaleString('ru-RU', { month: 'long' });
+    var day = currentDate.getDate();
+    var dayOfWeek = currentDate.toLocaleString('ru-RU', { weekday: 'long' });
+
+    yearElement.textContent = year;
+    monthElement.textContent = month;
+    dayElement.textContent = day;
+    dayOfWeekElement.textContent = dayOfWeek;
+  }, 1000);
+</script>
+    <div class="text2">Завтрак</div>
+	<input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider">
+    <p><span id="selectedTime"></span></p>
+  <script>
+    const timeSlider = document.getElementById('timeSlider');
+    const selectedTime = document.getElementById('selectedTime');
+
+    timeSlider.addEventListener('input', function() {
+      const hours = Math.floor(this.value / 3);
+      const minutes = (this.value % 3) * 20;
+      selectedTime.textContent = hours + " hours " + minutes + " minutes";
+    });
+  </script>
+    <div class="grid">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
