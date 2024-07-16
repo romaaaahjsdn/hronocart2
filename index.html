@@ -6,12 +6,6 @@
     <link rel="stylesheet" href="/hronocart3/style.css">
 </head>
 <body>
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
-
 <div class="dateblock3">
     <div class="dateblock2">
         <div class="day" id="currentDay"></div>
@@ -44,9 +38,14 @@
     dayOfWeekElement.textContent = dayOfWeek;
   }, 1000);
 </script>
-    <div class="text2">Завтрак</div>
-	<input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider">
-    <p><span id="selectedTime"></span></p>
+    <div class="block">
+        <div class="timeblock">
+            <div class="text">Завтрак:</div>
+            <div class="text"><span id="selectedTime"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider">
+        </div>
+    </div>
+
   <script>
     const timeSlider = document.getElementById('timeSlider');
     const selectedTime = document.getElementById('selectedTime');
@@ -54,7 +53,7 @@
     timeSlider.addEventListener('input', function() {
       const hours = Math.floor(this.value / 3);
       const minutes = (this.value % 3) * 20;
-      selectedTime.textContent = hours + " hours " + minutes + " minutes";
+      selectedTime.textContent = hours + " : " + minutes;
     });
   </script>
 </body>
