@@ -1,13 +1,9 @@
-{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static '../static/style.css' %}">
-    <meta name="viewport" content="width=device-width">
-    {% block css %}{% endblock %}
+    <link rel="stylesheet" href="/hronocart3/style.css">
 </head>
 <body>
     {% if messages %}
@@ -61,9 +57,5 @@
       selectedTime.textContent = hours + " hours " + minutes + " minutes";
     });
   </script>
-    <div class="grid">
-        {% block content %}
-        {% endblock %}
-    </div>
 </body>
 </html>
