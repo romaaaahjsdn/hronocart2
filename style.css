@@ -69,6 +69,13 @@ body {
     padding-left: 15px;
 }
 
+
+.timeblock{
+    padding: 6px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
 .grid-12 {
     display: grid;
     grid-template-columns: repeat(12, minmax(0,1fr));
@@ -422,6 +429,9 @@ section {
     gap: 20px;
 }
 
+.time-text {
+    padding-left: 20px;
+}
 .icon-text-block {
     cursor: pointer;
     text-decoration: none;
@@ -559,7 +569,7 @@ footer a:hover {
 /* === range theme and appearance === */
 input[type="range"] {
 	font-size: 1.5rem;
-	width: 8em;
+	width: 9em;
 }
 
 input[type="range"] {
