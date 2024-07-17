@@ -402,8 +402,8 @@ section {
 .arrow-btn {
     width: 220px;
     height: 58px;
-    background-color: #4DC591;
-    border: 1px solid #dddddd;
+    background-color: #E1EFFB;
+    border: 1px solid #0075FF;
     border-radius: 15px;
     margin: 3px;
     text-align: left;
@@ -570,14 +570,4 @@ footer a:hover {
 input[type="range"] {
 	font-size: 1.5rem;
 	width: 9em;
-}
-
-input[type="range"] {
-	color: #ef233c;
-	--thumb-height: 0.9em;
-	--track-height: 0.125em;
-	--track-color: rgba(0, 0, 0, 0.2);
-	--brightness-hover: 180%;
-	--brightness-down: 80%;
-	--clip-edges: 0.125em;
 }
