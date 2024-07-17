@@ -39,22 +39,81 @@
   }, 1000);
 </script>
     <div class="block">
-        <div class="timeblock">
+        <div class="dateblock3">
             <div class="text">Завтрак:</div>
-            <div class="text"><span id="selectedTime"></span></div>
-            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider">
+            <div class="text"><span id="selectedTime1"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider1">
         </div>
+
+        <div class="dateblock3">
+            <div class="text">Завтрак:</div>
+            <div class="text"><span id="selectedTime2"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider2">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Завтрак:</div>
+            <div class="text"><span id="selectedTime3"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider3">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Завтрак:</div>
+            <div class="text"><span id="selectedTime4"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider4">
+        </div>
+
+        <div class="dateblock3">
+        <div class="text">Завтрак:</div>
+        <div class="text"><span id="selectedTime5"></span></div>
+        <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider5">
     </div>
+    </div>
+<script>
+    const timeSlider1 = document.getElementById('timeSlider1');
+    const selectedTime1 = document.getElementById('selectedTime1');
 
-  <script>
-    const timeSlider = document.getElementById('timeSlider');
-    const selectedTime = document.getElementById('selectedTime');
-
-    timeSlider.addEventListener('input', function() {
-      const hours = Math.floor(this.value / 3);
-      const minutes = (this.value % 3) * 20;
-      selectedTime.textContent = hours + " : " + minutes;
+    timeSlider1.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime1.textContent = hours1 + " : " + minutes1;
     });
-  </script>
+
+    const timeSlider2 = document.getElementById('timeSlider2');
+    const selectedTime2 = document.getElementById('selectedTime2');
+
+    timeSlider2.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime2.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider3 = document.getElementById('timeSlider3');
+    const selectedTime3 = document.getElementById('selectedTime3');
+
+    timeSlider3.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime3.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider4 = document.getElementById('timeSlider4');
+    const selectedTime4 = document.getElementById('selectedTime4');
+
+    timeSlider4.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime4.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider5 = document.getElementById('timeSlider5');
+    const selectedTime5 = document.getElementById('selectedTime5');
+
+    timeSlider5.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime5.textContent = hours1 + " : " + minutes1;
+    });
+</script>
 </body>
 </html>
