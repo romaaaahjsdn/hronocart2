@@ -1,584 +1,289 @@
-:root {
-    --black: #303030;
-    --blue: #006cdc;
-    --light-bg: #F8F9FA;
-    --light-grey: #EEEEEE;
-    --grey: #B2B2B2;
-}
-
-@font-face {
-    font-family: 'ALS Sector';
-    font-style: normal;
-    font-weight: normal;
-    src: local('ALS Sector Regular'), url('/static/fonts/ALS_Sector-Regular.otf') format("truetype");
-}
-
-@font-face {
-    font-family: 'ALS Sector';
-    font-style: normal;
-    font-weight: bold;
-    src: local('ALS Sector Bold'), url('/static/fonts/ALS_Sector-Bold.otf') format("truetype");
-}
-
-
-body {
-    font-family: 'ALS Sector', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    margin: 0;
-    background-color: var(--light-bg);
-    overflow-x: hidden;
-    color: var(--black);
-    transform: scale(3.8);
-    transform-origin: 0 0;
-}
-
-.day{
-    font-family: "ALS Sector",sans-serif;
-    font-size: 1.8rem;
-    font-weight: normal;
-    text-decoration: none;
-    color: #303030;
-    padding-left: 10px;
-}
-
-.text2{
-    font-family: "ALS Sector",sans-serif;
-    font-size: 0.6rem;
-    font-weight: normal;
-    text-decoration: none;
-    color: #303030;
-    padding-left: 3px;
-}
-
-.dateblock{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.dateblock2{
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding-top: 5px;
-  mso-padding-between: 3px;
-}
-
-.dateblock3{
-    padding: 6px;
-    padding-left: 15px;
-}
-
-
-.timeblock{
-    padding: 6px;
-    padding-left: 15px;
-    padding-top: 15px;
-}
-
-.grid-12 {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0,1fr));
-    gap: 2vh;
-}
-
-.section {
-    mso-padding-between: 60px;
-}
-
-.datesection{
-    padding: 10px;
-}
-
-section {
-    padding: 60px 80px;
-}
-
-.nav-container {
-    display: flex;
-    gap: 70px;
-    align-items: center;
-}
-
-.toolbar {
-    width: 100%;
-    height: 80px;
-    backdrop-filter: blur(100px);
-    -webkit-backdrop-filter: blur(100px);
-    box-shadow: 0 0 50px 0 rgba(0, 57, 116, 0.1);
-    background: rgba(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    position: fixed;
-    z-index: 100;
-}
-
-.button{
-    width: 241px;
-    height: 70px;
-    fill: #4DC591;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    z-index: 100;
-}
-
-
-.toolbar-container {
-    width: 100%;
-    padding: 10px 80px;
-    gap: 2vh;
-    display: flex;
-    justify-content: space-between;
-}
-
-.logo {
-    width: 38px;
-}
-
-.nav-container a {
-    color: var(--black);
-    text-decoration: none;
-    font-size: 19px;
-    font-weight: bold;
-    transition: ease-in 0.2s;
-}
-
-.nav-container a:hover {
-    color: var(--blue);
-}
-
-.nav-container .active {
-    color: var(--blue);
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    align-self: center;
-    position: relative;
-    display: inline-block;
-}
-
-.cathedra {
-    font-size: 19px;
-    font-weight: bold;
-    color: var(--blue);
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.arrow-list {
-    margin-left: 5px;
-    transition: ease-in 0.1s;
-}
-
-.dropdown:hover .arrow-list {
-    margin-left: 5px;
-    transform: rotate(-180deg);
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    border-radius: 12px;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    right: 0;
-    font-size: 1.2rem;
-    padding: 5px;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    border-radius: 9px;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: ease-in 0.1s;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: var(--light-grey);
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-
-
-.container-white {
-    width: 250px;
-    height: 430px;
-    color: #FF7648;
-}
-
-
-
-.container-6 {
-    grid-column: span 6 / span 2;
-}
-
-.top-img-container {
-    max-height: 400px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.stroke-block {
-    padding: 8px 15px;
-    border: var(--black) 1px solid;
-    display: inline-block;
-    border-radius: 200px;
-}
-
-.h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    display: flex;
-    margin: 0;
-    line-height: 90%;
-}
-
-.h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    display: flex;
-    margin: 0;
-    line-height: 90%;
-}
-
-.h3 {
-    font-size: 1.7rem;
-    font-weight: bold;
-    display: flex;
-    margin: 0;
-    line-height: 110%;
-}
-
-.text1 {
-    font-size: 1.2rem;
-    font-weight: normal;
-    margin: 0;
-    display: flex;
-    line-height: 130%;
-}
-
-.mt10 {
-    margin-top: 10px;
-}
-
-.mt15 {
-    margin-top: 15px;
-}
-
-.ml15 {
-    margin-left: 15px;
-}
-
-.mt25 {
-    margin-top: 25px;
-}
-
-.mt40 {
-    margin-top: 40px;
-}
-
-.mt50 {
-    margin-top: 50px;
-}
-
-.slider {
-    grid-column: span 12 / span 2;
-    gap: 2vh;
-    transition: transform 0.5s; /* добавляем transition для плавного перемещения слайдов */
-    display: flex;
-    scroll-behavior: smooth; /* плавный скроллинг */
-}
-
-.slide {
-    border-radius: 20px;
-    padding: 35px 35px;
-    overflow: hidden;
-    transform: translateX(0); /* начальное положение слайда по оси X */
-    flex: 0 0 auto;
-}
-
-.advantage {
-    background-color: var(--light-bg);
-    border: var(--light-grey) 1px solid;
-    width: 25%;
-    display: block;
-}
-
-.teachers a {
-    text-decoration: none;
-    color: var(--black);
-}
-
-.teacher {
-    background-color: white;
-    width: 45%;
-    display: flex;
-    transition: ease-in 0.2s;
-    cursor: pointer;
-}
-
-.teacher:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 50px 0 rgba(0, 57, 116, 0.05);
-}
-
-.teacher .text1 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-
-.teacher-img {
-    width: 30%;
-    border-radius: 15px;
-    margin-right: 25px;
-}
-
-.text-block {
-    display: flex;
-    flex-direction: column;
-}
-
-.point-number {
-    font-size: 1.8rem;
-    color: var(--blue);
-    aspect-ratio: 1 / 1;
-    height: 45px;
-    border: var(--blue) 2px solid;
-    border-radius: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sub-info-block {
-    display: flex;
-    flex-direction: row;
-    color: var(--grey);
-}
-
-.sub-info-block .line {
-    height: 100%;
-    border: 1px solid var(--grey);
-    border-radius: 200px;
-}
-
-.block {
-    width: 245px;
-    height: 6000px;
-    background-color: #FFFFFF;
-    border-radius: 25px;
-}
-
-.inline-container {
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    vertical-align: middle;
-    padding-top: 20px;
-    padding-left: 10px;
-}
-
-.arrow-btn {
-    width: 220px;
-    height: 58px;
-    background-color: #E1EFFB;
-    border: 1px solid #0075FF;
-    border-radius: 15px;
-    margin: 3px;
-    text-align: left;
-}
-
-.save-btn {
-    width: 220px;
-    height: 30px;
-    background-color: #E1EFFB;
-    border: 1px solid #0075FF;
-    border-radius: 15px;
-    margin: 3px;
-    text-align: center;
-    margin-left: 11px;
-}
-
-.section-first {
-    padding: 140px 80px 60px 80px;
-}
-
-.contact {
-
-}
-
-.description {
-    font-size: 0.9rem;
-    color: var(--grey);
-    font-weight: bold;
-}
-
-.inline-text {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.time-text {
-    padding-left: 20px;
-}
-.icon-text-block {
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 7px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--blue);
-
-    padding: 5px;
-    margin: -5px;
-    border-radius: 8px;
-    transition: ease-in 0.2s;
-}
-
-.icon-text-block:hover {
-    background-color: var(--light-grey);
-}
-
-.container-8 {
-    grid-column: span 8 / span 2;
-    background: transparent no-repeat center;
-    background-size: cover;
-    border-radius: 30px;
-}
-
-footer {
-    height: fit-content;
-    background-color: var(--black);
-    padding: 50px 80px;
-}
-
-footer h3 {
-    font-size: 1.4rem;
-    color: white;
-    margin: 0;
-    margin-bottom: 20px;
-}
-
-footer h4 {
-    font-size: 1rem;
-    color: white;
-    margin: 0;
-}
-
-footer p {
-    font-size: 1.2rem;
-    color: white;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-footer a {
-    font-size: 1.2rem;
-    color: white;
-    margin: 0;
-    margin-bottom: 10px;
-    text-decoration: none;
-    transition: ease-in 0.2s;
-}
-
-footer a:hover {
-    color: var(--grey);
-}
-
-.flex-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.gap30 {
-    gap: 30px;
-}
-
-.line-horizontal {
-    height: 1px;
-    width: 100%;
-    background-color: white;
-    border-radius: 100px;
-}
-
-.toolbar-placeholder {
-    height: 80px;
-}
-
-.button_text{
-    font-size: 1.5rem;
-    font-weight: normal;
-    text-decoration: none;
-    color: #303030;
-    padding-left: 10px;
-}
-
-.button_text_2{
-    font-size: 1rem;
-    font-weight: normal;
-    text-decoration: none;
-    color: #303030;
-    padding-left: 10px;
-}
-
-.btn {
-    border: 1px solid var(--black);
-    border-radius: 200px;
-    color: var(--black);
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 12px 20px;
-    transition: ease-in 0.2s;
-}
-
-.btn:hover {
-    background-color: var(--blue);
-    color: white;
-    border: 1px solid var(--blue);
-}
-
-.arrow-btn {
-    transition: ease-in 0.2s;
-    cursor: pointer;
-}
-
-.arrow-btn:hover {
-    background-color: var(--light-grey);
-}
-
-/* === range theme and appearance === */
-input[type="range"] {
-	font-size: 1.5rem;
-	width: 9em;
-}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '../static/style.css' %}">
+    <meta name="viewport" content="width=device-width">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+<div class="dateblock3">
+    <div class="dateblock2">
+        <div class="day" id="currentDay"></div>
+        <div class="dateblock">
+            <div class="dateblock2">
+                <div class="text2" id="currentMonth"></div>
+                <div class="text2" id="currentYear"></div>
+            </div>
+            <div class="text2" id="currentDayOfWeek"></div>
+        </div>
+    </div>
+</div>
+<script>
+  var yearElement = document.getElementById('currentYear');
+  var monthElement = document.getElementById('currentMonth');
+  var dayElement = document.getElementById('currentDay');
+  var dayOfWeekElement = document.getElementById('currentDayOfWeek');
+
+  setInterval(function () {
+    var currentDate = new Date();
+
+    var year = currentDate.getFullYear();
+    var month = currentDate.toLocaleString('ru-RU', { month: 'long' });
+    var day = currentDate.getDate();
+    var dayOfWeek = currentDate.toLocaleString('ru-RU', { weekday: 'long' });
+
+    yearElement.textContent = year;
+    monthElement.textContent = month;
+    dayElement.textContent = day;
+    dayOfWeekElement.textContent = dayOfWeek;
+  }, 1000);
+</script>
+<div class="block">
+    <form method="post">
+        {% csrf_token %}
+        <div class="dateblock3">
+            <div class="text">Подъём:</div>
+            <div class="text"><span id="selectedTime1"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider1" name="slider1">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Гигиенические процедуры:</div>
+            <div class="text"><span id="selectedTime2"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider2" name="slider2">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Спорт:</div>
+            <div class="text"><span id="selectedTime3"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider3" name="slider3">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Завтрак:</div>
+            <div class="text"><span id="selectedTime4"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider4" name="slider4">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Сборы на учебу:</div>
+            <div class="text"><span id="selectedTime5"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider5" name="slider5">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Прогулка:</div>
+            <div class="text"><span id="selectedTime6"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider6" name="slider6">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Транспорт:</div>
+            <div class="text"><span id="selectedTime7"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider7" name="slider7">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Выполнение домашней работы:</div>
+            <div class="text"><span id="selectedTime8"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider8" name="slider8">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Подготовка к занятиям:</div>
+            <div class="text"><span id="selectedTime9"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider9" name="slider9">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Подготовка к экзаменам:</div>
+            <div class="text"><span id="selectedTime10"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider10" name="slider10">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Лекционные занятия:</div>
+            <div class="text"><span id="selectedTime11"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider11" name="slider11">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Практические занятия:</div>
+            <div class="text"><span id="selectedTime12"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider12" name="slider12">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Лабораторные работы:</div>
+            <div class="text"><span id="selectedTime13"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider13" name="slider13">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Дополнительное образование:</div>
+            <div class="text"><span id="selectedTime14"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider14" name="slider14">
+        </div>
+
+        <div class="dateblock3">
+            <div class="text">Работа/подработка:</div>
+            <div class="text"><span id="selectedTime15"></span></div>
+            <input type="range" min="0" max="72" value="0" step="1" class="slider" id="timeSlider15" name="slider15">
+        </div>
+
+        <button type="submit" formaction="/test/save_morning/" class="save-btn">cохранить</button>
+    </form>
+</div>
+<script>
+    const timeSlider1 = document.getElementById('timeSlider1');
+    const selectedTime1 = document.getElementById('selectedTime1');
+
+    timeSlider1.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime1.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider2 = document.getElementById('timeSlider2');
+    const selectedTime2 = document.getElementById('selectedTime2');
+
+    timeSlider2.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime2.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider3 = document.getElementById('timeSlider3');
+    const selectedTime3 = document.getElementById('selectedTime3');
+
+    timeSlider3.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime3.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider4 = document.getElementById('timeSlider4');
+    const selectedTime4 = document.getElementById('selectedTime4');
+
+    timeSlider4.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime4.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider5 = document.getElementById('timeSlider5');
+    const selectedTime5 = document.getElementById('selectedTime5');
+
+    timeSlider5.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime5.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider6 = document.getElementById('timeSlider6');
+    const selectedTime6 = document.getElementById('selectedTime6');
+
+    timeSlider6.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime6.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider7 = document.getElementById('timeSlider7');
+    const selectedTime7 = document.getElementById('selectedTime7');
+
+    timeSlider7.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime7.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider8 = document.getElementById('timeSlider8');
+    const selectedTime8 = document.getElementById('selectedTime8');
+
+    timeSlider8.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime8.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider9 = document.getElementById('timeSlider9');
+    const selectedTime9 = document.getElementById('selectedTime9');
+
+    timeSlider9.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime9.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider10 = document.getElementById('timeSlider10');
+    const selectedTime10 = document.getElementById('selectedTime10');
+
+    timeSlider10.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime10.textContent = hours1 + " : " + minutes1;
+    });
+
+        const timeSlider11 = document.getElementById('timeSlide11');
+    const selectedTime11 = document.getElementById('selectedTime11');
+
+    timeSlider11.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime11.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider12 = document.getElementById('timeSlider12');
+    const selectedTime12 = document.getElementById('selectedTime12');
+
+    timeSlider12.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime12.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider13 = document.getElementById('timeSlider13');
+    const selectedTime13 = document.getElementById('selectedTime13');
+
+    timeSlider13.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime13.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider14 = document.getElementById('timeSlider14');
+    const selectedTime14 = document.getElementById('selectedTime14');
+
+    timeSlider14.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime14.textContent = hours1 + " : " + minutes1;
+    });
+
+    const timeSlider15 = document.getElementById('timeSlider15');
+    const selectedTime15 = document.getElementById('selectedTime15');
+
+    timeSlider15.addEventListener('input', function() {
+        const hours1 = Math.floor(this.value / 3);
+        const minutes1 = (this.value % 3) * 20;
+        selectedTime15.textContent = hours1 + " : " + minutes1;
+    });
+
+</script>
+    <div class="grid">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
